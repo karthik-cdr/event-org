@@ -1,55 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First GitHub Pages Site</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f8;
-            text-align: center;
-            padding: 50px;
-        }
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            width: 400px;
-            margin: auto;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #2c3e50;
-        }
-        p {
-            color: #555;
-        }
-        button {
-            padding: 10px 20px;
-            border: none;
-            background: #0077ff;
-            color: white;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #005fd1;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Events</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#f4f6f8;
+color:#333;
+}
+
+header{
+background:url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622") center/cover no-repeat;
+height:80vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+header h1{
+font-size:50px;
+margin-bottom:10px;
+}
+
+header p{
+font-size:20px;
+}
+
+.btn{
+margin-top:20px;
+padding:12px 25px;
+background:#ff5a5f;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+section{
+padding:60px 20px;
+text-align:center;
+}
+
+.services{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+margin-top:30px;
+}
+
+.card{
+background:white;
+padding:25px;
+width:230px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+margin-top:30px;
+}
+
+.gallery img{
+width:100%;
+border-radius:8px;
+}
+
+form{
+max-width:450px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-top:25px;
+}
+
+input,textarea{
+padding:12px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+button{
+background:#ff5a5f;
+color:white;
+border:none;
+padding:12px;
+border-radius:5px;
+cursor:pointer;
+}
+
+footer{
+background:#222;
+color:white;
+padding:25px;
+text-align:center;
+margin-top:40px;
+}
+
+</style>
 </head>
+
 <body>
 
-<div class="card">
-    <h1>Hello 👋</h1>
-    <p>This is my first static website hosted on GitHub Pages.</p>
-    <button onclick="showMessage()">Click Me</button>
+<header>
+
+<div>
+<h1>Elite Events</h1>
+<p>Creating unforgettable celebrations</p>
+<button class="btn" onclick="scrollToContact()">Book Your Event</button>
 </div>
 
+</header>
+
+<section>
+
+<h2>Our Services</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Wedding Planning</h3>
+<p>Complete wedding event management.</p>
+</div>
+
+<div class="card">
+<h3>Birthday Parties</h3>
+<p>Fun and memorable birthday celebrations.</p>
+</div>
+
+<div class="card">
+<h3>Corporate Events</h3>
+<p>Professional business event planning.</p>
+</div>
+
+<div class="card">
+<h3>Decorations</h3>
+<p>Creative themes and decoration setup.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Event Gallery</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1519167758481-83f29c8f04d3">
+<img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3">
+<img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329">
+<img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce">
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>Book Your Event</h2>
+
+<form onsubmit="submitForm(event)">
+
+<input placeholder="Your Name" required>
+
+<input placeholder="Phone Number" required>
+
+<input placeholder="Event Type (Wedding / Birthday / Corporate)" required>
+
+<input type="date" required>
+
+<textarea placeholder="Event Details"></textarea>
+
+<button type="submit">Send Inquiry</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<p>© 2026 Elite Events | Event Planning Services</p>
+
+</footer>
+
 <script>
-function showMessage(){
-    alert("Your GitHub Pages site is working! 🚀");
+
+function scrollToContact(){
+document.getElementById("contact").scrollIntoView({behavior:"smooth"});
 }
+
+function submitForm(e){
+e.preventDefault();
+alert("Thank you! We will contact you soon.");
+}
+
 </script>
 
 </body>
